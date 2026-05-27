@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JeuCombat.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+108344f01eb7949cd28f8701fb6d6c9a395e1500")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99a8d3a5b06e811d9651fdce3bc11b83fc74ed2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("JeuCombat.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JeuCombat.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,3 +1,4 @@
+using JeuCombat.Domain.Constants;
 using JeuCombat.Domain.Enums;
 
 namespace JeuCombat.Domain.Entites;
@@ -12,7 +13,7 @@ public sealed class Heros : Personnage
         : base(nom, pointsDeVieMaximum, attaqueBase)
     {
         Classe = classe;
-        SoinsRestants = 2;
+        SoinsRestants = CombatRules.NombreMaximumSoins;
         CooldownCompetence = 0;
     }
 
