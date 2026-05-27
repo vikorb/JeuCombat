@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JeuCombat.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99a8d3a5b06e811d9651fdce3bc11b83fc74ed2d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d7503304e80698a2af5e242b093d3e2d855daf4")]
 [assembly: System.Reflection.AssemblyProductAttribute("JeuCombat.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JeuCombat.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
