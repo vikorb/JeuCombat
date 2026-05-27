@@ -1,0 +1,24 @@
+#!/bin/sh
+
+echo "Running dotnet format..."
+dotnet format --verify-no-changes
+if [ $? -ne 0 ]; then
+  echo "dotnet format failed. Run: dotnet format"
+  exit 1
+fi
+
+echo "Running dotnet build..."
+dotnet build
+if [ $? -ne 0 ]; then
+  echo "dotnet build failed."
+  exit 1
+fi
+
+echo "Running dotnet test..."
+dotnet test
+if [ $? -ne 0 ]; then
+  echo "dotnet test failed."
+  exit 1
+fi
+
+echo "Pre-commit checks passed."

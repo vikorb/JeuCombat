@@ -1,0 +1,140 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "JeuCombat.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "JeuCombat.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/JeuCombat.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JeuCombat.Application.dll": {}
+        }
+      },
+      "JeuCombat.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/JeuCombat.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JeuCombat.Domain.dll": {}
+        }
+      },
+      "JeuCombat.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "JeuCombat.Application": "1.0.0",
+          "JeuCombat.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/JeuCombat.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JeuCombat.Infrastructure.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "JeuCombat.Application/1.0.0": {
+      "type": "project",
+      "path": "../JeuCombat.Application/JeuCombat.Application.csproj",
+      "msbuildProject": "../JeuCombat.Application/JeuCombat.Application.csproj"
+    },
+    "JeuCombat.Domain/1.0.0": {
+      "type": "project",
+      "path": "../JeuCombat.Domain/JeuCombat.Domain.csproj",
+      "msbuildProject": "../JeuCombat.Domain/JeuCombat.Domain.csproj"
+    },
+    "JeuCombat.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../JeuCombat.Infrastructure/JeuCombat.Infrastructure.csproj",
+      "msbuildProject": "../JeuCombat.Infrastructure/JeuCombat.Infrastructure.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "JeuCombat.Application >= 1.0.0",
+      "JeuCombat.Domain >= 1.0.0",
+      "JeuCombat.Infrastructure >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/victoriaoruba/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Cli/JeuCombat.Cli.csproj",
+      "projectName": "JeuCombat.Cli",
+      "projectPath": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Cli/JeuCombat.Cli.csproj",
+      "packagesPath": "/Users/victoriaoruba/.nuget/packages/",
+      "outputPath": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Cli/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/victoriaoruba/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/JeuCombat.Application.csproj": {
+              "projectPath": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/JeuCombat.Application.csproj"
+            },
+            "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/JeuCombat.Domain.csproj": {
+              "projectPath": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/JeuCombat.Domain.csproj"
+            },
+            "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Infrastructure/JeuCombat.Infrastructure.csproj": {
+              "projectPath": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Infrastructure/JeuCombat.Infrastructure.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "allWarningsAsErrors": true,
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

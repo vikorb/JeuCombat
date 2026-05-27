@@ -1,0 +1,56 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "JeuCombat.Infrastructure/1.0.0": {
+        "dependencies": {
+          "JeuCombat.Application": "1.0.0",
+          "JeuCombat.Domain": "1.0.0"
+        },
+        "runtime": {
+          "JeuCombat.Infrastructure.dll": {}
+        }
+      },
+      "JeuCombat.Application/1.0.0": {
+        "dependencies": {
+          "JeuCombat.Domain": "1.0.0"
+        },
+        "runtime": {
+          "JeuCombat.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "JeuCombat.Domain/1.0.0": {
+        "runtime": {
+          "JeuCombat.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "JeuCombat.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JeuCombat.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JeuCombat.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

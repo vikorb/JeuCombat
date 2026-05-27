@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3040750D-CBC5-48FF-9EB7-0120A78EBC48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuCombat.Domain", "src\JeuCombat.Domain\JeuCombat.Domain.csproj", "{B319E43C-B403-4D55-A057-D89AED25F24C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuCombat.Application", "src\JeuCombat.Application\JeuCombat.Application.csproj", "{85690A6A-89BD-4B74-B4E5-457430898F1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuCombat.Infrastructure", "src\JeuCombat.Infrastructure\JeuCombat.Infrastructure.csproj", "{5662C6A4-E434-40E3-A082-2D3F6C634C78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuCombat.Cli", "src\JeuCombat.Cli\JeuCombat.Cli.csproj", "{56421528-B040-4D3B-A389-CAEAFBAB783E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{103070B7-18BD-4D0C-A32C-E1209F11BA6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JeuCombat.Tests", "tests\JeuCombat.Tests\JeuCombat.Tests.csproj", "{D061AE4B-B170-420C-B852-01B759CEE253}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B319E43C-B403-4D55-A057-D89AED25F24C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B319E43C-B403-4D55-A057-D89AED25F24C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B319E43C-B403-4D55-A057-D89AED25F24C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B319E43C-B403-4D55-A057-D89AED25F24C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85690A6A-89BD-4B74-B4E5-457430898F1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85690A6A-89BD-4B74-B4E5-457430898F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85690A6A-89BD-4B74-B4E5-457430898F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85690A6A-89BD-4B74-B4E5-457430898F1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5662C6A4-E434-40E3-A082-2D3F6C634C78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5662C6A4-E434-40E3-A082-2D3F6C634C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5662C6A4-E434-40E3-A082-2D3F6C634C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5662C6A4-E434-40E3-A082-2D3F6C634C78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56421528-B040-4D3B-A389-CAEAFBAB783E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56421528-B040-4D3B-A389-CAEAFBAB783E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56421528-B040-4D3B-A389-CAEAFBAB783E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56421528-B040-4D3B-A389-CAEAFBAB783E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D061AE4B-B170-420C-B852-01B759CEE253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D061AE4B-B170-420C-B852-01B759CEE253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D061AE4B-B170-420C-B852-01B759CEE253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D061AE4B-B170-420C-B852-01B759CEE253}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B319E43C-B403-4D55-A057-D89AED25F24C} = {3040750D-CBC5-48FF-9EB7-0120A78EBC48}
+		{85690A6A-89BD-4B74-B4E5-457430898F1A} = {3040750D-CBC5-48FF-9EB7-0120A78EBC48}
+		{5662C6A4-E434-40E3-A082-2D3F6C634C78} = {3040750D-CBC5-48FF-9EB7-0120A78EBC48}
+		{56421528-B040-4D3B-A389-CAEAFBAB783E} = {3040750D-CBC5-48FF-9EB7-0120A78EBC48}
+		{D061AE4B-B170-420C-B852-01B759CEE253} = {103070B7-18BD-4D0C-A32C-E1209F11BA6E}
+	EndGlobalSection
+EndGlobal

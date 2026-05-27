@@ -1,0 +1,16 @@
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/bin/Debug/net8.0/JeuCombat.Application.deps.json
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/bin/Debug/net8.0/JeuCombat.Application.dll
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/bin/Debug/net8.0/JeuCombat.Application.pdb
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/bin/Debug/net8.0/JeuCombat.Domain.dll
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/bin/Debug/net8.0/JeuCombat.Domain.pdb
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/obj/Debug/net8.0/JeuCombat.Application.csproj.AssemblyReference.cache
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/obj/Debug/net8.0/JeuCombat.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/obj/Debug/net8.0/JeuCombat.Application.AssemblyInfoInputs.cache
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/obj/Debug/net8.0/JeuCombat.Application.AssemblyInfo.cs
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/obj/Debug/net8.0/JeuCombat.Application.csproj.CoreCompileInputs.cache
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/obj/Debug/net8.0/JeuCombat.Application.sourcelink.json
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/obj/Debug/net8.0/JeuComba.36164BA8.Up2Date
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/obj/Debug/net8.0/JeuCombat.Application.dll
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/obj/Debug/net8.0/refint/JeuCombat.Application.dll
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/obj/Debug/net8.0/JeuCombat.Application.pdb
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/obj/Debug/net8.0/ref/JeuCombat.Application.dll

@@ -1,0 +1,12 @@
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/bin/Debug/net8.0/JeuCombat.Domain.deps.json
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/bin/Debug/net8.0/JeuCombat.Domain.dll
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/bin/Debug/net8.0/JeuCombat.Domain.pdb
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/obj/Debug/net8.0/JeuCombat.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/obj/Debug/net8.0/JeuCombat.Domain.AssemblyInfoInputs.cache
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/obj/Debug/net8.0/JeuCombat.Domain.AssemblyInfo.cs
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/obj/Debug/net8.0/JeuCombat.Domain.csproj.CoreCompileInputs.cache
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/obj/Debug/net8.0/JeuCombat.Domain.sourcelink.json
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/obj/Debug/net8.0/JeuCombat.Domain.dll
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/obj/Debug/net8.0/refint/JeuCombat.Domain.dll
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/obj/Debug/net8.0/JeuCombat.Domain.pdb
+/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/obj/Debug/net8.0/ref/JeuCombat.Domain.dll

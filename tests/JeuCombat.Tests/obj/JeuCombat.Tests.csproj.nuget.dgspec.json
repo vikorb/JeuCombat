@@ -1,0 +1,214 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/tests/JeuCombat.Tests/JeuCombat.Tests.csproj": {}
+  },
+  "projects": {
+    "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/JeuCombat.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/JeuCombat.Application.csproj",
+        "projectName": "JeuCombat.Application",
+        "projectPath": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/JeuCombat.Application.csproj",
+        "packagesPath": "/Users/victoriaoruba/.nuget/packages/",
+        "outputPath": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/victoriaoruba/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/JeuCombat.Domain.csproj": {
+                "projectPath": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/JeuCombat.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/JeuCombat.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/JeuCombat.Domain.csproj",
+        "projectName": "JeuCombat.Domain",
+        "projectPath": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/JeuCombat.Domain.csproj",
+        "packagesPath": "/Users/victoriaoruba/.nuget/packages/",
+        "outputPath": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/victoriaoruba/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/tests/JeuCombat.Tests/JeuCombat.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/tests/JeuCombat.Tests/JeuCombat.Tests.csproj",
+        "projectName": "JeuCombat.Tests",
+        "projectPath": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/tests/JeuCombat.Tests/JeuCombat.Tests.csproj",
+        "packagesPath": "/Users/victoriaoruba/.nuget/packages/",
+        "outputPath": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/tests/JeuCombat.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/victoriaoruba/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/JeuCombat.Application.csproj": {
+                "projectPath": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Application/JeuCombat.Application.csproj"
+              },
+              "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/JeuCombat.Domain.csproj": {
+                "projectPath": "/Users/victoriaoruba/Documents/SDV/M2/Accompagnement/JeuCombat/src/JeuCombat.Domain/JeuCombat.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.8.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
