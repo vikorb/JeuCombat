@@ -2,33 +2,59 @@
 
 Jeu de combat tour par tour en console, développé en C# avec .NET 8.
 
-Ce projet est réalisé dans le cadre d'un TP visant à appliquer les principes de clean code, SOLID, l'architecture en couches et plusieurs design patterns.
+Ce projet est réalisé dans le cadre d'un TP dont l'objectif est d'appliquer le clean code, les principes SOLID, une architecture en couches et plusieurs design patterns.
 
-## Objectif du projet
+## Sommaire
+
+- [Objectif](#objectif)
+- [Fonctionnalités](#fonctionnalités)
+- [Stack technique](#stack-technique)
+- [Installation](#installation)
+- [Commandes utiles](#commandes-utiles)
+- [Structure du projet](#structure-du-projet)
+- [Architecture](#architecture)
+- [Design patterns utilisés](#design-patterns-utilisés)
+- [Règles du jeu](#règles-du-jeu)
+- [Tests](#tests)
+- [Qualité de code](#qualité-de-code)
+- [État du projet](#état-du-projet)
+
+## Objectif
 
 Le joueur incarne un héros qui affronte plusieurs vagues d'ennemis dans un combat tour par tour.
 
-À chaque tour, le joueur choisit une action dans un menu, puis les ennemis encore vivants jouent leur tour.
+À chaque tour, le joueur choisit une action dans un menu. Ensuite, les ennemis encore vivants jouent leur tour.
 
-## Fonctionnalités attendues
+Le projet respecte les objectifs suivants :
+
+- Séparer la logique métier de la console.
+- Éviter de tout coder dans `Program.cs`.
+- Appliquer plusieurs design patterns de manière concrète.
+- Garder un code lisible, testable et maintenable.
+- Documenter l'architecture et les choix techniques.
+
+## Fonctionnalités
 
 - Saisie du nom du héros.
 - Choix d'une classe de héros :
   - Guerrier
   - Mage
   - Voleur
-- Combat contre 3 vagues d'ennemis :
+- Combat contre 3 vagues :
   - Vague 1 : 1 ennemi faible
   - Vague 2 : 2 ennemis
   - Vague 3 : 1 boss
-- Actions possibles :
+- Actions du joueur :
   - Attaque de base
   - Compétence spéciale de classe
   - Soin
   - Affichage du journal de combat
 - Gestion des points de vie.
 - Gestion des cooldowns.
+- Gestion des soins limités.
+- Gestion de l'armure ennemie.
 - Journal des événements de combat.
+- IA ennemie simple.
 - Conditions de victoire et de défaite.
 
 ## Stack technique
@@ -75,25 +101,13 @@ Lancer les tests :
 dotnet test
 ```
 
-Lancer l'application :
+Lancer le jeu :
 
 ```bash
 dotnet run --project src/JeuCombat.Cli/JeuCombat.Cli.csproj
 ```
 
 ## Commandes utiles
-
-Formater le code :
-
-```bash
-dotnet format
-```
-
-Vérifier le formatage sans modifier les fichiers :
-
-```bash
-dotnet format --verify-no-changes
-```
 
 Compiler toute la solution :
 
@@ -107,90 +121,130 @@ Lancer tous les tests :
 dotnet test
 ```
 
+Formater le code :
+
+```bash
+dotnet format
+```
+
+Vérifier le formatage sans modifier les fichiers :
+
+```bash
+dotnet format --verify-no-changes
+```
+
+Lancer le projet console :
+
+```bash
+dotnet run --project src/JeuCombat.Cli/JeuCombat.Cli.csproj
+```
+
 ## Structure du projet
 
 ```txt
 JeuCombat/
 ├── src/
 │   ├── JeuCombat.Domain/
+│   │   ├── Constants/
+│   │   ├── Enums/
+│   │   └── Entites/
+│   │
 │   ├── JeuCombat.Application/
+│   │   ├── Combat/
+│   │   │   ├── Actions/
+│   │   │   ├── Ai/
+│   │   │   ├── Chance/
+│   │   │   ├── Commands/
+│   │   │   ├── Events/
+│   │   │   ├── Journal/
+│   │   │   ├── Sessions/
+│   │   │   └── States/
+│   │   └── Factories/
+│   │
 │   ├── JeuCombat.Infrastructure/
+│   │   └── ConsoleUI/
+│   │
 │   └── JeuCombat.Cli/
+│       └── Program.cs
+│
 ├── tests/
 │   └── JeuCombat.Tests/
+│
 ├── docs/
+│   └── architecture.md
+│
 ├── .editorconfig
 ├── README.md
 └── JeuCombat.sln
 ```
 
-## Rôle des projets
+## Architecture
+
+Le projet est séparé en plusieurs couches.
 
 ### JeuCombat.Domain
 
 Contient le coeur métier du jeu.
 
-Il ne dépend d'aucun autre projet.
+Cette couche ne dépend d'aucune autre couche.
 
-Exemples de responsabilités :
+Elle contient notamment :
 
-- Personnages
-- Héros
-- Ennemis
-- Points de vie
-- Dégâts
-- Règles métier simples
-- Constantes de combat
+- `Personnage`
+- `Heros`
+- `Ennemi`
+- `Vague`
+- `ClasseHero`
+- `TypeEnnemi`
+- `CombatRules`
 
 ### JeuCombat.Application
 
-Contient la logique applicative.
+Contient la logique applicative du combat.
 
-Exemples de responsabilités :
+Elle orchestre les actions, les états, les commandes, l'IA et les événements.
 
-- Session de combat
+Elle contient notamment :
+
 - Actions de combat
+- Commandes joueur
 - États du combat
-- Commandes du joueur
+- Session de combat
+- IA ennemie
 - Factories
-- Gestion des événements de combat
-- Intelligence artificielle simple des ennemis
+- Journal
+- Publisher d'événements
 
 ### JeuCombat.Infrastructure
 
 Contient les détails techniques.
 
-Exemples de responsabilités :
+Actuellement, cette couche contient l'interface console :
 
-- Affichage console
-- Lecture des choix utilisateur
-- Persistance JSON éventuelle
-- Implémentations techniques
+- lecture utilisateur
+- rendu console
+- affichage des messages
+- lancement du jeu console
 
 ### JeuCombat.Cli
 
 Point d'entrée de l'application.
 
-Ce projet assemble les dépendances et lance le jeu.
-
-Le fichier `Program.cs` doit rester léger.
+Le fichier `Program.cs` reste volontairement court. Il assemble les dépendances principales et lance le jeu.
 
 ### JeuCombat.Tests
 
-Contient les tests unitaires du projet.
+Contient les tests unitaires.
 
-Les tests doivent cibler principalement la logique métier et applicative, sans dépendre de la console.
+Les tests ciblent principalement la logique métier et applicative, sans dépendre de l'affichage console.
 
-## Règles d'architecture
+## Règle de dépendance
 
-Le projet suit une architecture simple en couches.
-
-Les dépendances doivent aller dans ce sens :
+Les dépendances suivent ce sens :
 
 ```txt
 Cli -> Infrastructure -> Application -> Domain
 Cli -> Application -> Domain
-Cli -> Domain
 Tests -> Application -> Domain
 ```
 
@@ -198,46 +252,121 @@ Règles importantes :
 
 - `Domain` ne référence aucun autre projet.
 - `Application` référence `Domain`.
-- `Infrastructure` peut référencer `Application` et `Domain`.
-- `Cli` assemble le tout.
-- La logique métier ne doit pas être écrite dans `Program.cs`.
-- La console ne doit pas calculer les dégâts directement.
-- La création des personnages doit être centralisée.
-- Les actions doivent être extensibles sans gros `switch`.
+- `Infrastructure` référence `Application` et `Domain`.
+- `Cli` assemble l'application.
+- La console ne contient pas les règles de combat.
+- `Program.cs` ne contient pas la logique métier.
 
-## Design patterns prévus
+## Design patterns utilisés
 
-| Pattern | Rôle dans le projet | Classes prévues |
+| Pattern | Classes / interfaces | Rôle dans le jeu |
 | --- | --- | --- |
-| Strategy | Représenter les actions de combat comme des algorithmes interchangeables | `ICombatAction`, `AttaqueBasiqueAction`, `SoinAction`, `CompetenceGuerrierAction`, `CompetenceMageAction`, `CompetenceVoleurAction` |
-| State | Gérer les différentes phases du combat | `ICombatState`, `TourJoueurState`, `TourEnnemiState`, `EntreVaguesState`, `VictoireState`, `DefaiteState` |
-| Factory | Centraliser la création des héros, ennemis et vagues | `HeroFactory`, `EnemyFactory`, `WaveFactory` |
-| Command | Séparer la saisie utilisateur de l'exécution métier | `ICommand`, `AttaquerCommand`, `UtiliserCompetenceCommand`, `SoignerCommand`, `AfficherJournalCommand` |
-| Observer | Journaliser et diffuser les événements de combat | `ICombatObserver`, `CombatEventPublisher`, `JournalCombatObserver`, `ConsoleCombatObserver` |
+| Strategy | `ICombatAction`, `AttaqueBasiqueAction`, `SoinAction`, `CompetenceGuerrierAction`, `CompetenceMageAction`, `CompetenceVoleurAction` | Chaque action de combat est un algorithme interchangeable. Le menu console ne calcule pas les dégâts directement. |
+| Strategy | `IEnnemiAiStrategy`, `AttaqueSimpleEnnemiAiStrategy` | L'IA ennemie est séparée de la session de combat. La session orchestre, la stratégie décide comment un ennemi agit. |
+| State | `ICombatState`, `TourJoueurState`, `TourEnnemiState`, `EntreVaguesState`, `VictoireState`, `DefaiteState` | Le combat change d'état sans grosse cascade de `if/else`. Chaque état porte son propre comportement. |
+| Factory | `IHerosFactory`, `HerosFactory`, `IEnnemiFactory`, `EnnemiFactory`, `IVagueFactory`, `VagueFactory` | La création des héros, ennemis et vagues est centralisée. Les `new` ne sont pas dispersés dans toute l'application. |
+| Command | `ICommand`, `AttaquerCommand`, `UtiliserCompetenceCommand`, `SoignerCommand`, `AfficherJournalCommand`, `ActionInvoker` | Les choix du joueur sont encapsulés dans des commandes exécutables. |
+| Observer | `ICombatObserver`, `ICombatEventPublisher`, `CombatEventPublisher`, `InMemoryCombatJournal`, `ConsoleCombatObserver` | Les événements de combat sont publiés à plusieurs observateurs : journal en mémoire et affichage console. |
 
-## Pattern bonus prévu
+## Justification des patterns
 
-Le pattern bonus prévu est `Repository`.
+### Strategy
 
-Il pourra servir à sauvegarder des scores ou un historique de partie dans un fichier JSON.
+Les actions de combat sont représentées par des classes séparées.
 
-Classes prévues :
+Cela permet d'ajouter une nouvelle action sans modifier le menu ou la session de combat.
 
-- `IScoreRepository`
-- `JsonScoreRepository`
-- `Score`
+Exemple :
 
-Ce pattern reste optionnel dans un premier temps. Il sera ajouté seulement après le fonctionnement principal du jeu.
+```txt
+ICombatAction
+├── AttaqueBasiqueAction
+├── SoinAction
+├── CompetenceGuerrierAction
+├── CompetenceMageAction
+└── CompetenceVoleurAction
+```
+
+### State
+
+Le combat possède plusieurs états :
+
+```txt
+Tour du joueur
+Tour ennemi
+Entre deux vagues
+Victoire
+Défaite
+```
+
+Chaque état est représenté par une classe dédiée.
+
+Cela évite une boucle de combat trop complexe avec beaucoup de conditions.
+
+### Factory
+
+Les factories créent les objets du jeu :
+
+```txt
+HerosFactory
+EnnemiFactory
+VagueFactory
+```
+
+Cela centralise les statistiques et évite de répéter les mêmes constructions dans plusieurs fichiers.
+
+### Command
+
+Chaque choix du joueur est représenté par une commande :
+
+```txt
+1 -> AttaquerCommand
+2 -> UtiliserCompetenceCommand
+3 -> SoignerCommand
+4 -> AfficherJournalCommand
+```
+
+Cela sépare la saisie utilisateur de l'exécution métier.
+
+### Observer
+
+Les actions publient des événements.
+
+Ces événements peuvent être reçus par plusieurs observateurs :
+
+```txt
+CombatEventPublisher
+├── InMemoryCombatJournal
+└── ConsoleCombatObserver
+```
+
+Le système est donc extensible. Par exemple, on pourrait ajouter plus tard un observateur qui sauvegarde les événements dans un fichier.
 
 ## Règles du jeu
+
+### Démarrage
+
+Au lancement, le joueur doit :
+
+1. Saisir le nom du héros.
+2. Choisir une classe.
+3. Combattre les vagues d'ennemis.
 
 ### Classes de héros
 
 | Classe | Points de vie | Attaque de base | Compétence spéciale |
 | --- | ---: | ---: | --- |
-| Guerrier | 120 | 18 | Frappe lourde : dégâts x1,5 avec cooldown de 2 tours |
-| Mage | 80 | 12 | Éclair : dégâts magiques fixes et ignore une partie de l'armure ennemie avec cooldown de 3 tours |
-| Voleur | 90 | 14 | Coup critique : chance de doubler les dégâts avec cooldown de 2 tours |
+| Guerrier | 120 | 18 | Frappe lourde : dégâts x1,5, cooldown de 2 tours |
+| Mage | 80 | 12 | Éclair : dégâts magiques fixes, ignore 50 % de l'armure ennemie, cooldown de 3 tours |
+| Voleur | 90 | 14 | Coup critique : 30 % de chance de doubler les dégâts, cooldown de 2 tours |
+
+### Vagues
+
+| Vague | Ennemis |
+| --- | --- |
+| 1 | 1 Gobelin |
+| 2 | 1 Gobelin + 1 Gobelin archer |
+| 3 | 1 Chef orc |
 
 ### Actions du joueur
 
@@ -258,31 +387,63 @@ Il est limité à 2 utilisations maximum par combat.
 
 Le soin ne peut pas dépasser les points de vie maximum du héros.
 
+### Cooldown
+
+Chaque compétence spéciale déclenche un cooldown.
+
+Le cooldown diminue après le tour ennemi.
+
 ### Conditions de fin
 
 | État | Condition |
 | --- | --- |
 | Victoire | Tous les ennemis de la vague 3 sont vaincus |
 | Défaite | Les points de vie du héros sont inférieurs ou égaux à 0 |
-| Entre vagues | Le héros survit et récupère une partie de ses points de vie avant la vague suivante |
+| Entre vagues | Si le héros survit, il récupère 20 % de ses PV maximum avant la vague suivante |
+
+## Tests
+
+Le projet utilise xUnit.
+
+Lancer tous les tests :
+
+```bash
+dotnet test
+```
+
+Les tests couvrent notamment :
+
+- Les points de vie.
+- Les dégâts.
+- Le soin.
+- Les cooldowns.
+- Les factories.
+- Les actions de combat.
+- Les commandes.
+- Les événements Observer.
+- Les états du combat.
+- L'IA ennemie.
+- Les scénarios complets de victoire et de défaite.
 
 ## Qualité de code
 
-Le projet doit respecter les principes suivants :
+Le projet applique les règles suivantes :
 
-- Noms explicites.
-- Fonctions courtes.
-- Classes avec une responsabilité claire.
+- Responsabilités séparées.
+- Pas de logique métier dans `Program.cs`.
 - Pas de logique métier dans la console.
-- Pas de gros `switch` central pour toute la logique.
-- Pas de nombres magiques dans le code.
-- Utilisation de constantes nommées.
-- Tests unitaires sur la logique importante.
-- Gestion propre des entrées invalides.
+- Pas de classe fourre-tout.
+- Pas de nombres magiques pour les règles principales.
+- Utilisation de constantes dans `CombatRules`.
+- Actions séparées via Strategy.
+- États séparés via State.
+- Création centralisée via Factory.
+- Événements de combat via Observer.
+- Tests unitaires sur la logique sans console.
 
 ## Configuration qualité
 
-Le fichier `.editorconfig` définit les règles de formatage principales.
+Le fichier `.editorconfig` configure le formatage.
 
 Les warnings sont traités comme des erreurs avec :
 
@@ -298,31 +459,24 @@ dotnet build
 dotnet test
 ```
 
-## Tests prévus
+## État du projet
 
-Les premiers tests unitaires viseront les règles suivantes :
-
-- Un personnage ne peut pas avoir plus de points de vie que son maximum.
-- Un soin rend des points de vie sans dépasser le maximum.
-- Une attaque réduit correctement les points de vie d'une cible.
-- Une compétence en cooldown ne peut pas être exécutée.
-- Un personnage est considéré comme vaincu quand ses points de vie sont à 0.
-
-## État actuel du projet
-
-- [x] Création de la solution .NET
+- [x] Mise en place de la solution .NET
 - [x] Création des projets
-- [x] Ajout des références entre projets
-- [x] Mise en place du formatage
-- [x] Mise en place des hooks Git
-- [x] Documentation initiale
-- [ ] Création du domaine métier
-- [ ] Création des premières entités
-- [ ] Création des premières actions de combat
-- [ ] Création de la boucle de combat
-- [ ] Ajout des tests unitaires
-- [ ] Implémentation complète des design patterns
-- [ ] Finalisation du README avec le tableau patterns vers classes réelles
+- [x] Configuration du formatage
+- [x] Configuration des hooks Git
+- [x] Création du domaine métier
+- [x] Création des factories
+- [x] Création des actions de combat
+- [x] Création des commandes joueur
+- [x] Création du système d'événements Observer
+- [x] Création de la machine à états
+- [x] Création de l'IA ennemie
+- [x] Création de l'interface console
+- [x] Ajout de tests unitaires
+- [x] Ajout de tests de scénarios complets
+- [x] Documentation d'architecture
+- [ ] Bonus Repository JSON éventuel
 
 ## Convention de commit
 
@@ -336,77 +490,18 @@ Exemples :
 
 ```txt
 chore(project): initialize dotnet solution
-docs(readme): add project documentation
-feat(domain): add character entity
-feat(combat): add basic attack action
-test(domain): add health points tests
-refactor(combat): split player and enemy turns
+feat(domain): add characters and health rules
+feat(factory): add hero enemy and wave factories
+feat(strategy): add combat actions
+feat(command): add player combat commands
+feat(observer): add combat event publisher
+feat(state): add combat session states
+feat(ai): add enemy attack strategy
+feat(console): add playable cli game
+test(combat): add full session scenario tests
+docs(readme): document architecture and patterns
 ```
-
-## Roadmap de développement
-
-### Étape 1 — Mise en place
-
-- Solution .NET
-- Projets
-- Références
-- `.editorconfig`
-- Hook Git
-- README
-
-### Étape 2 — Domaine métier
-
-- Classe `Personnage`
-- Classe `Heros`
-- Classe `Ennemi`
-- Enum `ClasseHero`
-- Enum `TypeEnnemi`
-- Constantes de combat
-
-### Étape 3 — Tests du domaine
-
-- Tests sur les points de vie
-- Tests sur le soin
-- Tests sur les dégâts
-- Tests sur la mort d'un personnage
-
-### Étape 4 — Actions de combat
-
-- Interface `ICombatAction`
-- Attaque de base
-- Soin
-- Compétences des classes
-
-### Étape 5 — Factories
-
-- Création des héros
-- Création des ennemis
-- Création des vagues
-
-### Étape 6 — Boucle de combat
-
-- Session de combat
-- Tour joueur
-- Tour ennemi
-- Passage entre vagues
-- Victoire
-- Défaite
-
-### Étape 7 — Console
-
-- Menus
-- Saisie utilisateur
-- Affichage de l'état du combat
-- Affichage du journal
-
-### Étape 8 — Finalisation
-
-- Nettoyage du code
-- Tests complémentaires
-- Documentation des choix d'architecture
-- Schéma ou diagramme
-- Démonstration finale
 
 ## Auteur
 
-Projet réalisé par Victoria Oruba.
+Projet réalisé par Enzo Drissi.
