@@ -1,2 +1,8 @@
-// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+using JeuCombat.Infrastructure.ConsoleUI;
+
+IConsoleInputReader inputReader = new ConsoleInputReader();
+IConsoleRenderer renderer = new ConsoleRenderer();
+
+var game = new ConsoleGame(inputReader, renderer);
+
+game.Lancer();
