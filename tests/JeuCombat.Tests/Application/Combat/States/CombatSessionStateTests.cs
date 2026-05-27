@@ -1,4 +1,5 @@
 using JeuCombat.Application.Combat.Actions;
+using JeuCombat.Application.Combat.Ai;
 using JeuCombat.Application.Combat.Commands;
 using JeuCombat.Application.Combat.Events;
 using JeuCombat.Application.Combat.Journal;
@@ -37,6 +38,37 @@ public sealed class CombatSessionStateTests
         session.ExecuterCommandeJoueur(command);
 
         Assert.Equal(CombatStateType.TourEnnemi, session.EtatCourant.Type);
+    }
+
+    [Fact]
+    public void TourEnnemi_UtiliseLaStrategieAiInjectee()
+    {
+        var heros = new Heros(
+            "Aria",
+            ClasseHero.Mage,
+            CombatRules.MagePointsDeVie,
+            CombatRules.MageAttaqueBase);
+
+        var ennemi = new Ennemi(
+            "Gobelin",
+            TypeEnnemi.Gobelin,
+            CombatRules.GobelinPointsDeVie,
+            CombatRules.GobelinAttaqueBase,
+            CombatRules.GobelinArmure);
+
+        var vague = new Vague(1, new List<Ennemi> { ennemi });
+        var strategy = new FakeEnnemiAiStrategy();
+        var session = new CombatSession(
+            heros,
+            new List<Vague> { vague },
+            CreerPublisher(out _),
+            strategy);
+
+        session.ChangerEtat(new TourEnnemiState());
+        session.ExecuterEtatCourant();
+
+        Assert.True(strategy.AEteAppelee);
+        Assert.Equal(73, heros.PointsDeVie);
     }
 
     [Fact]
@@ -220,5 +252,22 @@ public sealed class CombatSessionStateTests
         publisher.AjouterObservateur(journal);
 
         return publisher;
+    }
+
+    private sealed class FakeEnnemiAiStrategy : IEnnemiAiStrategy
+    {
+        public bool AEteAppelee { get; private set; }
+
+        public EnnemiActionResult Executer(Ennemi ennemi, Heros cible)
+        {
+            AEteAppelee = true;
+
+            cible.RecevoirDegats(7);
+
+            return new EnnemiActionResult(
+                true,
+                $"{ennemi.Nom} attaque {cible.Nom} et inflige 7 dégâts.",
+                7);
+        }
     }
 }

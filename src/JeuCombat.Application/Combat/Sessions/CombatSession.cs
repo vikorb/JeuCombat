@@ -1,3 +1,4 @@
+using JeuCombat.Application.Combat.Ai;
 using JeuCombat.Application.Combat.Commands;
 using JeuCombat.Application.Combat.Events;
 using JeuCombat.Application.Combat.States;
@@ -9,16 +10,27 @@ namespace JeuCombat.Application.Combat.Sessions;
 public sealed class CombatSession
 {
     private readonly ICombatEventPublisher _eventPublisher;
+    private readonly IEnnemiAiStrategy _ennemiAiStrategy;
     private int _indexVagueCourante;
 
     public CombatSession(
         Heros heros,
         IReadOnlyList<Vague> vagues,
         ICombatEventPublisher eventPublisher)
+        : this(heros, vagues, eventPublisher, new AttaqueSimpleEnnemiAiStrategy())
+    {
+    }
+
+    public CombatSession(
+        Heros heros,
+        IReadOnlyList<Vague> vagues,
+        ICombatEventPublisher eventPublisher,
+        IEnnemiAiStrategy ennemiAiStrategy)
     {
         ArgumentNullException.ThrowIfNull(heros);
         ArgumentNullException.ThrowIfNull(vagues);
         ArgumentNullException.ThrowIfNull(eventPublisher);
+        ArgumentNullException.ThrowIfNull(ennemiAiStrategy);
 
         if (vagues.Count == 0)
         {
@@ -28,6 +40,7 @@ public sealed class CombatSession
         Heros = heros;
         Vagues = vagues;
         _eventPublisher = eventPublisher;
+        _ennemiAiStrategy = ennemiAiStrategy;
         EtatCourant = new TourJoueurState();
         _indexVagueCourante = 0;
     }
@@ -93,12 +106,12 @@ public sealed class CombatSession
                 break;
             }
 
-            int degats = ennemi.AttaqueBase;
+            var resultat = _ennemiAiStrategy.Executer(ennemi, Heros);
 
-            Heros.RecevoirDegats(degats);
-
-            _eventPublisher.Publier(new CombatEvent(
-                $"{ennemi.Nom} attaque {Heros.Nom} et inflige {degats} dégâts."));
+            if (resultat.EstReussi)
+            {
+                _eventPublisher.Publier(new CombatEvent(resultat.Message));
+            }
 
             if (Heros.EstVaincu)
             {
