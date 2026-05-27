@@ -63,7 +63,7 @@ public sealed class PersonnageTests
         heros.UtiliserSoin(CombatRules.SoinPointsDeVie);
 
         Assert.Equal(1, heros.SoinsRestants);
-        Assert.Equal(75, heros.PointsDeVie);
+        Assert.Equal(80, heros.PointsDeVie);
     }
 
     [Fact]

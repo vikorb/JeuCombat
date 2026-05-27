@@ -2,9 +2,9 @@ namespace JeuCombat.Domain.Constants;
 
 public static class CombatRules
 {
-    public const int PourcentageRestaurationEntreVagues = 20;
-    public const int SoinPointsDeVie = 25;
+    public const int SoinPointsDeVie = 30;
     public const int NombreMaximumSoins = 2;
+    public const int PourcentageRestaurationEntreVagues = 30;
 
     public const int GuerrierPointsDeVie = 120;
     public const int GuerrierAttaqueBase = 18;
@@ -24,14 +24,14 @@ public static class CombatRules
     public const int VoleurMultiplicateurCritique = 2;
 
     public const int GobelinPointsDeVie = 40;
-    public const int GobelinAttaqueBase = 8;
+    public const int GobelinAttaqueBase = 6;
     public const int GobelinArmure = 2;
 
     public const int GobelinArcherPointsDeVie = 35;
-    public const int GobelinArcherAttaqueBase = 10;
+    public const int GobelinArcherAttaqueBase = 8;
     public const int GobelinArcherArmure = 1;
 
-    public const int BossOrcPointsDeVie = 150;
-    public const int BossOrcAttaqueBase = 18;
-    public const int BossOrcArmure = 5;
+    public const int BossOrcPointsDeVie = 100;
+    public const int BossOrcAttaqueBase = 14;
+    public const int BossOrcArmure = 3;
 }

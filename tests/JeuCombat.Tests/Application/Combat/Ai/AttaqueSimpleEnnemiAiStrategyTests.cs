@@ -18,7 +18,7 @@ public sealed class AttaqueSimpleEnnemiAiStrategyTests
 
         Assert.True(resultat.EstReussi);
         Assert.Equal(CombatRules.GobelinAttaqueBase, resultat.DegatsInfliges);
-        Assert.Equal(72, heros.PointsDeVie);
+        Assert.Equal(74, heros.PointsDeVie);
     }
 
     [Fact]

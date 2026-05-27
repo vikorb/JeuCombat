@@ -149,7 +149,7 @@ public sealed class CombatSessionStateTests
 
         Assert.Equal(CombatStateType.TourJoueur, session.EtatCourant.Type);
         Assert.Equal(2, session.NumeroVagueCourante);
-        Assert.Equal(46, session.Heros.PointsDeVie);
+        Assert.Equal(54, session.Heros.PointsDeVie);
         Assert.NotEmpty(journal.RecupererDerniersEvenements(10));
     }
 

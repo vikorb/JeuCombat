@@ -33,8 +33,8 @@ public sealed class CombatActionTests
         var resultat = action.Executer(heros, null);
 
         Assert.True(resultat.EstReussi);
-        Assert.Equal(25, resultat.PointsDeVieSoignes);
-        Assert.Equal(75, heros.PointsDeVie);
+        Assert.Equal(30, resultat.PointsDeVieSoignes);
+        Assert.Equal(80, heros.PointsDeVie);
         Assert.Equal(1, heros.SoinsRestants);
     }
 
@@ -75,8 +75,8 @@ public sealed class CombatActionTests
         var resultat = action.Executer(heros, boss);
 
         Assert.True(resultat.EstReussi);
-        Assert.Equal(28, resultat.DegatsInfliges);
-        Assert.Equal(122, boss.PointsDeVie);
+        Assert.Equal(29, resultat.DegatsInfliges);
+        Assert.Equal(71, boss.PointsDeVie);
         Assert.Equal(CombatRules.MageCooldownCompetence, heros.CooldownCompetence);
     }
 

@@ -73,7 +73,7 @@ public sealed class CommandTests
 
         Assert.True(resultat.EstReussi);
         Assert.True(resultat.TermineLeTour);
-        Assert.Equal(75, heros.PointsDeVie);
+        Assert.Equal(80, heros.PointsDeVie);
         Assert.Single(journal.RecupererDerniersEvenements(10));
     }
 
