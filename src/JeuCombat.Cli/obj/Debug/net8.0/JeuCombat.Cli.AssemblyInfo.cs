@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JeuCombat.Cli")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3267e6bcdda09acafb755e6ac2143befae1f728d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fdb08a24bf51fe98adf995202641be919237f58")]
 [assembly: System.Reflection.AssemblyProductAttribute("JeuCombat.Cli")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JeuCombat.Cli")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

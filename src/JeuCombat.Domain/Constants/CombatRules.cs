@@ -2,6 +2,7 @@ namespace JeuCombat.Domain.Constants;
 
 public static class CombatRules
 {
+    public const int PourcentageRestaurationEntreVagues = 20;
     public const int SoinPointsDeVie = 25;
     public const int NombreMaximumSoins = 2;
 
