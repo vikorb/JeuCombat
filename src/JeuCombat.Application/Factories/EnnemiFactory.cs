@@ -8,6 +8,7 @@ public sealed class EnnemiFactory : IEnnemiFactory
 {
     public Ennemi Creer(TypeEnnemi type)
     {
+        // remplacer par Activator.CreateInstance RaceJouable
         return type switch
         {
             TypeEnnemi.Gobelin => new Ennemi(
