@@ -1,5 +1,9 @@
 # JeuCombat
 
+> Note personnelle : ayant été absente les deux premiers jours ainsi que le dernier jour du TP, je n’ai été présente qu’à une seule séance. J’ai donc rattrapé le projet comme j’ai pu, en me concentrant sur l’aspect principal du cours : comprendre une hiérarchie de projet, structurer correctement les responsabilités et justifier les choix de design patterns.
+>
+> Le code a été en partie généré avec l’aide de l’IA, puis relu, adapté et vérifié par moi. En revanche, le travail de compréhension, de factorisation, de découpage en couches et de choix des design patterns correspond à ma démarche personnelle pour répondre aux objectifs du TP.
+
 Jeu de combat tour par tour en console, développé en C# avec .NET 8.
 
 Ce projet est réalisé dans le cadre d'un TP dont l'objectif est d'appliquer le clean code, les principes SOLID, une architecture en couches et plusieurs design patterns.

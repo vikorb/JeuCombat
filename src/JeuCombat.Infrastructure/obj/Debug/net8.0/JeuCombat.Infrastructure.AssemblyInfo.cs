@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JeuCombat.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+937fec9f2ab922ee2decef8323ba8c3f9976220c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+388ce1d517cd1982031b5adae11ea5a36bb19bf6")]
 [assembly: System.Reflection.AssemblyProductAttribute("JeuCombat.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JeuCombat.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
